@@ -162,9 +162,9 @@ void main()
         lcdstring("Your ID No. is:");
         lcdcmd(0xc0);
 				i=0;
-        for(i=7;i<12;i++)
-        lcddata(rfid[i]);
-        delay(2000);
+        //for(i=7;i<12;i++)
+        //lcddata(rfid[i]);
+      
 				lcdcmd(0xc0);
 			//input maker
 			  c=0;
@@ -180,6 +180,7 @@ void main()
 				//function calling
 				output=hextobin(input);
 				lcdcmd(0xc0);
+				lcdcmd(0x01);
 				decimaloutput = bintocard(output);
 				lcdstring(decimaloutput);
 
